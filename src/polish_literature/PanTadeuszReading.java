@@ -7,7 +7,7 @@ import java.io.IOException;
 public class PanTadeuszReading {
 
 	public static void main(String[] args) {
-		// app printing the excellent Polish epic poem
+		// app that read&print the excellent Polish epic poem
 
 		try (BufferedReader br = new BufferedReader(new FileReader("pan-tadeusz.txt"))) {
 			int number = 0;

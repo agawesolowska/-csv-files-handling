@@ -8,7 +8,7 @@ import java.util.List;
 public class PanTadeuszSortingAndWriting {
 
 	public static void main(String[] args) {
-		// app that sort and write the excellent Polish epic poem
+		// app that sort&write the excellent Polish epic poem
 		
 		try {
 			List<String> lines = Files.readAllLines(Paths.get("pan-tadeusz.txt"));

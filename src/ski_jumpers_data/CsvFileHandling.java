@@ -81,4 +81,9 @@ public class CsvFileHandling {
 						Collectors.counting()));
 	}
 	
+	public static Map<RepresentedCountry, Double> averageHeightOfRepresentatives(List<SkiJumper> skiJumperList){
+		return skiJumperList.stream()
+				.collect(Collectors.groupingBy(SkiJumper::getCountry,
+						Collectors.averagingInt(SkiJumper::getHeight)));
+	}
 }

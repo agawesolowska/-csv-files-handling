@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class App {
 
 	public static void main(String[] args) {
-		// TODO 
+		// app for reading ski jumpers data
 		
 		File file = new File("zawodnicy.csv");
 		List<SkiJumper> skiJumperList = CsvFileHandling.loadData(file);
@@ -25,11 +25,13 @@ public class App {
 		System.out.println("AUT - Austria , FIN - Finlandia, GER - Niemcy, NOR - Norwegia, POL - Polska, USA - Stany Zjednoczone");
 		
 		RepresentedCountry country = RepresentedCountry.valueOf(sc.nextLine());
-		System.out.println("Skoczkowie ważą łącznie: " + CsvFileHandling.totalWeightOfRepresentatives(skiJumperList, country) + " kg.\n");
+		System.out.println("Wybrani skoczkowie ważą łącznie: " + CsvFileHandling.totalWeightOfRepresentatives(skiJumperList, country) + " kg.\n");
 		
-		System.out.println("");
+		System.out.println("W skład reprezentacji poszczególnych krajów wchodzi poniższa liczba zawodników:");
 		System.out.println(CsvFileHandling.howManyRepresentatives(skiJumperList));
 		
+		System.out.println("\nŚredni wzrost zawodników z poszczególnych krajów to [cm]:");
+		System.out.println(CsvFileHandling.averageHeightOfRepresentatives(skiJumperList));
 		
 		sc.close();
 	}
