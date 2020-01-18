@@ -28,48 +28,24 @@ public class SkiJumper {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
 	public String getLastName() {
 		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
 	}
 
 	public RepresentedCountry getCountry() {
 		return country;
 	}
 
-	public void setCountry(RepresentedCountry country) {
-		this.country = country;
-	}
-
 	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(LocalDate dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
 	}
 
 	public Integer getHeight() {
 		return height;
 	}
 
-	public void setHeight(Integer height) {
-		this.height = height;
-	}
-
 	public Integer getWeight() {
 		return weight;
-	}
-
-	public void setWeight(Integer weight) {
-		this.weight = weight;
 	}
 
 	@Override

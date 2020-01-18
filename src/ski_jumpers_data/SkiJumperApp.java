@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
-public class App {
+public class SkiJumperApp {
 
 	public static void main(String[] args) {
 		// app for reading ski jumpers data
