@@ -11,9 +11,17 @@ import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * Utility class for CSV file handling.
+ * 
+ * @author Aga
+ *
+ */
 public class CsvFileHandling {
-	// utility class
 
+	/**
+	 * This method loads data from CSV file and adds ski jumpers to a list.
+	 */
 	public static List<SkiJumper> loadData(File file) {
 		List<SkiJumper> skiJumpersList = new ArrayList<>();
 
@@ -36,35 +44,29 @@ public class CsvFileHandling {
 	}
 
 	public static Optional<SkiJumper> getOldest(List<SkiJumper> skiJumpersList) {
-		return skiJumpersList.stream()
-				.min(Comparator.comparing(SkiJumper::getDateOfBirth));
+		return skiJumpersList.stream().min(Comparator.comparing(SkiJumper::getDateOfBirth));
 	}
 
 	public static Optional<SkiJumper> getYoungest(List<SkiJumper> skiJumpersList) {
-		return skiJumpersList.stream()
-				.max(Comparator.comparing(SkiJumper::getDateOfBirth));
+		return skiJumpersList.stream().max(Comparator.comparing(SkiJumper::getDateOfBirth));
 	}
 
 	public static SkiJumper getHighest(List<SkiJumper> skiJumpersList) {
-		return skiJumpersList.stream()
-				.max((j1, j2) -> j1.getHeight() - j2.getHeight()).get();
+		return skiJumpersList.stream().max((j1, j2) -> j1.getHeight() - j2.getHeight()).get();
 	}
 
 	public static SkiJumper getLowest(List<SkiJumper> skiJumpersList) {
-		return skiJumpersList.stream()
-				.min((j1, j2) -> j1.getHeight() - j2.getHeight()).get();
+		return skiJumpersList.stream().min((j1, j2) -> j1.getHeight() - j2.getHeight()).get();
 	}
 
 	public static SkiJumper getHeaviest(List<SkiJumper> skiJumpersList) {
-		return skiJumpersList.stream()
-				.max((j1, j2) -> j1.getWeight() - j2.getWeight()).get();
+		return skiJumpersList.stream().max((j1, j2) -> j1.getWeight() - j2.getWeight()).get();
 	}
 
 	public static SkiJumper getLightest(List<SkiJumper> skiJumpersList) {
-		return skiJumpersList.stream()
-				.min((j1, j2) -> j1.getWeight() - j2.getWeight()).get();
+		return skiJumpersList.stream().min((j1, j2) -> j1.getWeight() - j2.getWeight()).get();
 	}
-	
+
 	public static int totalWeightOfRepresentatives(List<SkiJumper> skiJumpersList, RepresentedCountry country) {
 		int totalWeight = 0;
 		for (SkiJumper skiJumper : skiJumpersList) {
@@ -74,16 +76,13 @@ public class CsvFileHandling {
 		}
 		return totalWeight;
 	}
-	
-	public static Map<RepresentedCountry, Long> howManyRepresentatives(List<SkiJumper> skiJumpersList){
-		return skiJumpersList.stream()
-				.collect(Collectors.groupingBy(SkiJumper::getCountry,
-						Collectors.counting()));
+
+	public static Map<RepresentedCountry, Long> howManyRepresentatives(List<SkiJumper> skiJumpersList) {
+		return skiJumpersList.stream().collect(Collectors.groupingBy(SkiJumper::getCountry, Collectors.counting()));
 	}
-	
-	public static Map<RepresentedCountry, Double> averageHeightOfRepresentatives(List<SkiJumper> skiJumpersList){
+
+	public static Map<RepresentedCountry, Double> averageHeightOfRepresentatives(List<SkiJumper> skiJumpersList) {
 		return skiJumpersList.stream()
-				.collect(Collectors.groupingBy(SkiJumper::getCountry,
-						Collectors.averagingInt(SkiJumper::getHeight)));
+				.collect(Collectors.groupingBy(SkiJumper::getCountry, Collectors.averagingInt(SkiJumper::getHeight)));
 	}
 }

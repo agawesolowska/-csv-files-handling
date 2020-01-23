@@ -5,9 +5,15 @@ import java.time.LocalDate;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
-@Getter @EqualsAndHashCode
+/**
+ * Model class of ski jumpers.
+ * 
+ * @author Aga
+ *
+ */
+@Getter
+@EqualsAndHashCode
 public class SkiJumper {
-	// model class
 
 	private String firstName, lastName;
 	private RepresentedCountry country;
@@ -27,11 +33,11 @@ public class SkiJumper {
 		this.height = height;
 		this.weight = weight;
 	}
-	
+
 	@Override
 	public String toString() {
-		return firstName + " " + lastName + ", reprezentujący: " + country
-				+ ", urodzony: " + dateOfBirth + ", wzrost[cm]: " + height + ", waga[kg]: " + weight;
+		return firstName + " " + lastName + ", reprezentujący: " + country + ", urodzony: " + dateOfBirth
+				+ ", wzrost[cm]: " + height + ", waga[kg]: " + weight;
 	}
 
 }
